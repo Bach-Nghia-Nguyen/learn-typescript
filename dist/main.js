@@ -17,4 +17,12 @@ var user2 = {
         return "Hello " + this.name;
     }
 };
-console.log(user2.getMessage());
+var popularTags = ["dragon", "coffee"];
+var dragonTag = "dragon";
+// Union operator
+var username = "Alex";
+var pageName = "1";
+console.log(typeof pageName);
+var errorMessage = null;
+var user3 = null;
+var someProp;

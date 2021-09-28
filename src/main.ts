@@ -29,4 +29,27 @@ const user2: UserInterface = {
   },
 };
 
-console.log(user2.getMessage());
+// console.log(user2.getMessage());
+
+// type alias
+type ID = string;
+type PopularTag = string;
+type PossiblePopularTag = PopularTag | null;
+interface UserInterFace {
+  id: ID;
+  name: string;
+  surname: string;
+}
+
+const popularTags: PopularTag[] = ["dragon", "coffee"];
+const dragonTag: PossiblePopularTag = "dragon";
+
+// Union operator
+let username: string = "Alex";
+let pageName: string | number = "1";
+console.log(typeof pageName);
+let errorMessage: string | null = null;
+
+let user3: UserInterFace | null = null;
+
+let someProp: string | number | null | undefined | string[] | object;
