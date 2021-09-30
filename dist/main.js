@@ -45,5 +45,12 @@ var s2 = vUnknown;
 // console.log(vAny.foo());
 // console.log(vUnknown.foo());
 var pageNumber = "1";
+// type assertion
 var numericPageNumber = pageNumber;
-console.log(typeof numericPageNumber);
+// console.log(typeof numericPageNumber);
+var someElement = document.querySelector(".foo");
+// console.log("someElement:", someElement.type);
+someElement.addEventListener("blur", function (event) {
+    var target = event.target;
+    console.log("event:", target.value);
+});

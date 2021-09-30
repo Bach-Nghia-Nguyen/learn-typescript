@@ -80,5 +80,13 @@ let s2: string = vUnknown as string;
 // console.log(vUnknown.foo());
 
 let pageNumber: string = "1";
+// type assertion
 let numericPageNumber: number = pageNumber as unknown as number;
-console.log(typeof numericPageNumber);
+// console.log(typeof numericPageNumber);
+
+const someElement = document.querySelector(".foo") as HTMLInputElement;
+// console.log("someElement:", someElement.type);
+someElement.addEventListener("blur", (event) => {
+  const target = event.target as HTMLInputElement;
+  console.log("event:", target.value);
+});
