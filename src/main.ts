@@ -55,6 +55,7 @@ let user3: UserInterFace | null = null;
 let someProp: string | number | null | undefined | string[] | object;
 
 const doSomething = (): void => {
+  // void means no return
   console.log("Do something");
 };
 
@@ -86,7 +87,52 @@ let numericPageNumber: number = pageNumber as unknown as number;
 
 const someElement = document.querySelector(".foo") as HTMLInputElement;
 // console.log("someElement:", someElement.type);
-someElement.addEventListener("blur", (event) => {
-  const target = event.target as HTMLInputElement;
-  console.log("event:", target.value);
-});
+// someElement.addEventListener("blur", (event) => {
+//   const target = event.target as HTMLInputElement;
+//   console.log("event:", target.value);
+// });
+
+interface UserInterface3 {
+  getFullname(): string;
+}
+class User implements UserInterface3 {
+  protected firstName: string;
+  lastName: string;
+  private middleName: string;
+  readonly unchangeableName: string;
+  static readonly maxAge = 50;
+
+  constructor(firstName: string, lastName: string, middleName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.middleName = middleName;
+    this.unchangeableName = firstName;
+  }
+
+  // changeName(): void {
+  //   this.unchangeableName = "Toan"
+  // }
+
+  getFullname(): string {
+    return this.lastName + " " + this.middleName + " " + this.firstName;
+  }
+}
+
+class Admin extends User {
+  private editor: string;
+
+  setEditor(editor: string): void {
+    this.editor = editor;
+  }
+
+  getEditor(): string {
+    return this.editor;
+  }
+}
+
+const user7 = new User("Nghia", "Nguyen", "Bach");
+console.log(user7);
+console.log(User);
+
+const newAd = new Admin("Huyen", "Nguyen", "Thu");
+console.log(newAd);
