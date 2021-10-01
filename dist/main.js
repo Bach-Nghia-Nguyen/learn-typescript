@@ -13,6 +13,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var word = "tree";
 var PI = 3.1415;
 var isCold = true;
@@ -95,7 +106,30 @@ var Admin = /** @class */ (function (_super) {
     return Admin;
 }(User));
 var user7 = new User("Nghia", "Nguyen", "Bach");
-console.log(user7);
-console.log(User);
+// console.log(user7);
+// console.log(User);
 var newAd = new Admin("Huyen", "Nguyen", "Thu");
-console.log(newAd);
+// console.log(newAd);
+var searchStr = "foo";
+// const hasSearchedString = any<string>(
+//   (el: string) => el.contains(searchStr),
+//   ["foooo", "bar", "baz"]
+// );
+// generic type
+var addId = function (obj) {
+    var id = Math.random().toString(16);
+    return __assign(__assign({}, obj), { id: id });
+};
+var user10 = {
+    name: "Nghia",
+    data: {
+        meta: "Hellfire"
+    },
+    meta: "Wow"
+};
+// const user21: UserInterface99<string[]> = {
+//   name: "Ming",
+//   data: ["u", "yw"],
+// };
+// const result = addId<UserInterface99<object>>(user10);
+// console.log("Result:", result);

@@ -131,8 +131,45 @@ class Admin extends User {
 }
 
 const user7 = new User("Nghia", "Nguyen", "Bach");
-console.log(user7);
-console.log(User);
+// console.log(user7);
+// console.log(User);
 
 const newAd = new Admin("Huyen", "Nguyen", "Thu");
-console.log(newAd);
+// console.log(newAd);
+
+const searchStr = "foo";
+// const hasSearchedString = any<string>(
+//   (el: string) => el.contains(searchStr),
+//   ["foooo", "bar", "baz"]
+// );
+
+// generic type
+const addId = <T extends object>(obj: T) => {
+  const id = Math.random().toString(16);
+  return {
+    ...obj,
+    id,
+  };
+};
+
+interface UserInterface99<T, V> {
+  name: string;
+  data: T;
+  meta: V;
+}
+
+const user10: UserInterface99<{ meta: string }, string> = {
+  name: "Nghia",
+  data: {
+    meta: "Hellfire",
+  },
+  meta: "Wow",
+};
+
+// const user21: UserInterface99<string[]> = {
+//   name: "Ming",
+//   data: ["u", "yw"],
+// };
+
+// const result = addId<UserInterface99<object>>(user10);
+// console.log("Result:", result);
