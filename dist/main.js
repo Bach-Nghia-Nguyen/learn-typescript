@@ -133,3 +133,20 @@ var user10 = {
 // };
 // const result = addId<UserInterface99<object>>(user10);
 // console.log("Result:", result);
+// const statuses = {
+//   notStarte: 0,
+//   inProgress: 1,
+//   done: 2,
+// };
+// console.log(statuses.inProgress);
+var StatusEnum;
+(function (StatusEnum) {
+    StatusEnum["NotStarted"] = "not started";
+    StatusEnum["InProgress"] = "in progress";
+    StatusEnum["Done"] = "done";
+})(StatusEnum || (StatusEnum = {}));
+var notStartedStatus = StatusEnum.NotStarted;
+console.log(notStartedStatus);
+// console.log(StatusEnum.InProgress);
+// console.log(StatusEnum.Done);
+// console.log(StatusEnum.NotStarted);

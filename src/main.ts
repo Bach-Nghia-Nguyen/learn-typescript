@@ -173,3 +173,30 @@ const user10: UserInterface99<{ meta: string }, string> = {
 
 // const result = addId<UserInterface99<object>>(user10);
 // console.log("Result:", result);
+
+// const statuses = {
+//   notStarte: 0,
+//   inProgress: 1,
+//   done: 2,
+// };
+
+// console.log(statuses.inProgress);
+
+enum StatusEnum {
+  NotStarted = "not started",
+  InProgress = "in progress",
+  Done = "done",
+}
+
+interface Task {
+  id: string;
+  status: StatusEnum;
+}
+
+let notStartedStatus: StatusEnum = StatusEnum.NotStarted;
+
+console.log(notStartedStatus);
+
+// console.log(StatusEnum.InProgress);
+// console.log(StatusEnum.Done);
+// console.log(StatusEnum.NotStarted);
